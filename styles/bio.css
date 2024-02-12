@@ -1,1 +1,9 @@
-/*# sourceMappingURL=bio.css.map */
+.header__heading {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+}
+
+.hero__image {
+  height: 100px;
+}/*# sourceMappingURL=bio.css.map */
