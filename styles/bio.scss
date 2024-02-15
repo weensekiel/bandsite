@@ -13,6 +13,8 @@ body {
   line-height: 18px;
   font-weight: 400;
   margin: 0px;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .section {
@@ -24,6 +26,10 @@ body {
     padding-top: 24px;
     padding-bottom: 16px;
     margin: 0px;
+
+    @include tablet {
+      padding-left: 36px;
+    }
   }
 }
 
@@ -38,6 +44,13 @@ body {
     display: flex;
     justify-content: center;
     padding-top: 16px;
+
+    @include tablet {
+      display: inline-block;
+      position: relative;
+      top: 30px;
+      padding-left: 36px;
+    }
   }
 
   &__nav {
@@ -45,6 +58,11 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+
+    @include tablet {
+      position: relative;
+      bottom: 20px;
+    }
   }
 }
 
@@ -63,11 +81,15 @@ body {
 
   &--text {
     color: white;
-    height: 500px;
+    height: 360px;
     display: flex;
     align-items: center;
     font-size: 32px;
     margin: 0px;
+
+    @include tablet {
+      padding-left: 36px;
+    }
   }
 }
 
@@ -76,18 +98,29 @@ body {
   padding: 0px 16px;
 
   &__img {
-    width: 96%;
-    padding: 0px 16px;
+    width: 100%;
+
+    @include tablet {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+      padding: 0px 80px;
+    }
   }
 
   &__text {
-    padding: 0px 16px;
+    display: block;
 
-    // @include tablet {
-    //   display: flex;
-    //   flex-direction: row;
-    //   justify-content: space-evenly;
-    // }
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding-left: 80px;
+
+      p {
+        padding-right: 10px;
+      }
+    }
   }
 
   &__subheader {
@@ -95,6 +128,10 @@ body {
     font-size: 14px;
     line-height: 22px;
     font-weight: 600;
+
+    @include tablet {
+      padding-left: 80px;
+    }
   }
 }
 
@@ -104,12 +141,12 @@ body {
   display: flex;
   flex-direction: column;
 
-//   @include tablet {
-//     flex-direction: row;
-//     flex-wrap: wrap;
-//     justify-content: space-evenly;
-//     align-content: space-evenly;
-//   }
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+  }
 
   &__item {
     padding: 0px 16px;
@@ -125,24 +162,61 @@ body {
 .footer {
   background-color: $bandsite-black;
   width: 100%;
-  padding-bottom: 10px;
   color: white;
   padding-left: 16px;
-  font-size: 13px;
-  line-height: 18px;
-  font-weight: 400;
+
+  @include tablet {
+    padding-left: 36px;
+  }
+
+  &__content {
+    padding-bottom: 10px;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+
+    @include tablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+
+  }
 
   &__heading {
+    display: flex;
     padding-top: 24px;
     font-size: 24px;
+
+    @include tablet {
+      display: inline-block;
+      padding-left: 36px;
+    }
   }
 
   &__logo {
     display: flex;
     justify-content: left;
+
+    @include tablet {
+      // ******************FIX THIS AUDUASDUA********************
+      position: relative;
+      left: 74%;
+      bottom: 258px;
+    }
   }
 
   &__icons {
     padding-right: 20px;
+
+    @include tablet {
+      display: inline-block;
+      padding: 0px 10px;
+
+      a {
+        padding: 0px 10px;
+      }
+    }
   }
+
 }
