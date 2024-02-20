@@ -4,6 +4,16 @@
 
 a {
   text-decoration: none;
+  color: $mercury;
+  text-underline-offset: 100%;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active {
+  text-decoration: underline;
   color: white;
 }
 
