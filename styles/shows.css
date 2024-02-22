@@ -88,6 +88,60 @@ body {
   flex-direction: column;
   color: white;
   font-size: 1rem;
+  padding: 10%;
+  line-height: 24px;
+}
+
+#shows {
+  padding: 18px 16px;
+}
+#shows h2 {
+  font-size: 3rem;
+}
+#shows h4 {
+  color: #afafaf;
+}
+#shows div {
+  padding: 18px 0px;
+}
+#shows div:hover {
+  background-color: #e1e1e1;
+}
+@media screen and (min-width: 768px) {
+  #shows {
+    padding: 18px 10%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .show__content {
+    display: flex;
+    justify-content: space-evenly;
+  }
+}
+
+hr {
+  stroke-width: 1px;
+  width: 100%;
+  background-color: #e1e1e1;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  background-color: #323232;
+  color: white;
+  border-radius: 4px;
+  padding: 0px 32px;
+}
+@media screen and (min-width: 768px) {
+  button {
+    width: 150px;
+  }
+}
+
+button:hover {
+  background-color: #000000;
 }
 
 .footer {
