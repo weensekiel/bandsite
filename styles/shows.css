@@ -105,11 +105,14 @@ body {
   padding: 18px 0px;
 }
 #shows div:hover {
-  background-color: #e1e1e1;
+  background-color: #fafafa;
+}
+#shows div:active {
+  background-image: #e1e1e1;
 }
 @media screen and (min-width: 768px) {
   #shows {
-    padding: 18px 10%;
+    padding: 18px 5%;
   }
 }
 

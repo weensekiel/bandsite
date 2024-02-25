@@ -100,18 +100,22 @@ body {
   }
 
   div:hover {
-    background-color: $mercury;
+    background-color: $alabaster;
+  }
+
+  div:active {
+    background-image: $mercury;
   }
 
   @include tablet {
-    padding: 18px 10%;
+    padding: 18px 5%;
   }
 
 }
 
 .show__content {
   @include tablet {
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
   }
 
@@ -202,5 +206,4 @@ button:hover {
       }
     }
   }
-
 }

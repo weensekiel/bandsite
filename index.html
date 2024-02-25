@@ -5,6 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bandsite</title>
+  <script defer src="./pages/scripts/index-page.js"></script>
+
   <link rel="stylesheet" href="./styles/bio.css" />
 </head>
 
@@ -12,8 +14,12 @@
   <header class="header">
     <a href="./index.html" class="header__logo"><img src="./assets/logos/Logo-bandsite.svg" alt="bandsite logo" /></a>
     <nav class="header__nav">
-      <a href="index.html"><h3>Biography</h3></a>
-      <a href="pages/shows.html"><h3>Shows</h3></a>
+      <a href="index.html">
+        <h3>Biography</h3>
+      </a>
+      <a href="pages/shows.html">
+        <h3>Shows</h3>
+      </a>
     </nav>
   </header>
 
@@ -67,6 +73,30 @@
       <img src="./assets/images/Photo-gallery-8.jpg" alt="dj turntables" class="gallery gallery__item" />
       <img src="./assets/images/Photo-gallery-9.jpg" alt="confetti in crowd" class="gallery gallery__item" />
     </div>
+  </section>
+
+  <section class="comments">
+    <h2>Join the Conversation</h2>
+    <form method="post" id="formy">
+      <div class="new-comment">
+        <ul>
+          <li>
+            <label for="name">NAME</label>
+            <input name="name" type="text" placeholder="Enter your name" class="input-box"/>
+          </li>
+
+          <li>
+            <label for="comment">Comment</label>
+            <textarea type="textbox" name="comment"placeholder="Add a new comment" class="input-box"></textarea>
+          </li>
+
+          <li>
+            <button>COMMENT</button>
+          </li>
+        </ul>
+      </div>
+    </form>
+    <ul id="comments"></ul>
   </section>
 
 
