@@ -315,6 +315,8 @@ button:hover {
 
 .new-comment {
   display: flex;
+  width: 100%;
+  justify-content: center;
 }
 
 .input-box {

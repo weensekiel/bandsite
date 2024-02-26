@@ -35,13 +35,21 @@ function renderComments(comments) {
 
 function handleSubmit(evt) {
     evt.preventDefault();
+
+    
+    let today = new Date();
+    let yyyy = today.getFullYear();
+    let mm = today.getMonth() + 1;
+    let dd = today.getDate();
+    today = mm + "/" + dd + "/" + yyyy;
     
     const name = evt.target.name.value;
+    const timestamp = today;
     const comment = evt.target.comment.value;
-
+    
     const newEntry = {
         name: name,
-        timestamp: formattedToday,
+        timestamp: today,
         text: comment
     };
 
@@ -51,7 +59,5 @@ function handleSubmit(evt) {
     console.log(newEntry);
     evt.target.reset();
 }
-
-
 
 renderComments(comments);
