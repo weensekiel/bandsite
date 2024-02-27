@@ -8,11 +8,11 @@ const form = document.getElementById("formy");
 
 form.addEventListener("submit", handleSubmit);
 
-function renderComments(comments) {
+function renderComments(comment) {
     const list = document.getElementById("comments");
     list.innerText = "";
 
-    commentsList.forEach(comment => {
+    commentsList.reverse().forEach(comment => {
         const li = document.createElement("li");
         list.append(li);
 
@@ -33,20 +33,26 @@ function renderComments(comments) {
     })
 }
 
+async function fetchComments() {
+    const comments = await bandSiteApi.getComments();
+    comments.forEach(comment => {
+        renderComments(comment);
+    })
+}
+
 function handleSubmit(evt) {
     evt.preventDefault();
 
-    
     let today = new Date();
     let yyyy = today.getFullYear();
     let mm = today.getMonth() + 1;
     let dd = today.getDate();
     today = mm + "/" + dd + "/" + yyyy;
-    
+
     const name = evt.target.name.value;
     const timestamp = today;
     const comment = evt.target.comment.value;
-    
+
     const newEntry = {
         name: name,
         timestamp: today,
@@ -59,5 +65,7 @@ function handleSubmit(evt) {
     console.log(newEntry);
     evt.target.reset();
 }
+
+const bandSiteApi = new BandSiteApi("eb7ac7c9-5339-4cd1-a55c-82c1318d8088");
 
 renderComments(comments);
