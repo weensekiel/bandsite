@@ -6,39 +6,35 @@ form.addEventListener("submit", handleSubmit);
 async function getCommentsAndRender() {
     try {
         const comments = await api.getComments();
-        console.log("Comments after fetching:", comments);
+        console.log(comments);
         renderComments(comments);
     } catch (error) {
-        console.error("Error fetching and rendering comments:", error);
+        console.error("Error fetching and rendering comments:");
     }
 }
 
 function renderComments(comments) {
     const list = document.getElementById("comments");
     list.innerHTML = "";
-    if (Array.isArray(comments)) {
-        comments.reverse().forEach(comment => {
-            const li = document.createElement("li");
-            list.appendChild(li);
+    comments.reverse().forEach(comment => {
+        const li = document.createElement("li");
+        list.appendChild(li);
 
-            const name = document.createElement("div");
-            name.innerText = comment.name;
-            li.appendChild(name);
+        const name = document.createElement("div");
+        name.innerText = comment.name;
+        li.appendChild(name);
 
-            const timestamp = document.createElement("div");
-            timestamp.innerText = comment.timestamp;
-            li.appendChild(timestamp);
+        const timestamp = document.createElement("div");
+        timestamp.innerText = comment.timestamp;
+        li.appendChild(timestamp);
 
-            const text = document.createElement("div");
-            text.innerText = comment.comment;
-            li.appendChild(text);
+        const text = document.createElement("div");
+        text.innerText = comment.comment;
+        li.appendChild(text);
 
-            const divider = document.createElement("hr");
-            li.appendChild(divider);
-        });
-    } else {
-        console.error("Comments is not an array:", comments);
-    }
+        const divider = document.createElement("hr");
+        li.appendChild(divider);
+    });
 }
 
 async function handleSubmit(evt) {
@@ -55,11 +51,14 @@ async function handleSubmit(evt) {
     const comment = evt.target.comment.value;
 
     try {
-        await api.postComment(name, comment);
-        console.log("Comment posted successfully.");
-        getCommentsAndRender();
+        const newComment = await api.postComment(name, timestamp, comment);
+
+        const comments = await api.getComments();
+        renderComments(comments);
+
+        console.log("Comment posted.", comments);
     } catch (error) {
-        console.error("Error posting comment:", error);
+        console.error("Error posting comment index-page:", error);
     }
 
     evt.target.reset();
