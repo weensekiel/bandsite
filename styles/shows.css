@@ -117,7 +117,7 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-  .show__content {
+  .show {
     display: flex;
     justify-content: space-evenly;
   }

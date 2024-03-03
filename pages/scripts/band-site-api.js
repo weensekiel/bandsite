@@ -7,7 +7,7 @@ class BandSiteApi {
 
     async postComment(name, comment) {
         try {
-            
+
             const response = await axios.post(`${this.baseUrl}/comments?api_key=${this.apiKey}`, {
                 name: name,
                 comment: comment
@@ -39,8 +39,7 @@ class BandSiteApi {
             return shows;
         }
         catch (error) {
-            console.error(("Error fetching shows."));
-            return;
+            console.error("Error fetching shows.");
         }
     }
 }

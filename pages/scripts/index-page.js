@@ -51,14 +51,13 @@ async function handleSubmit(evt) {
     const comment = evt.target.comment.value;
 
     try {
-        const newComment = await api.postComment(name, timestamp, comment);
+        const newComment = await api.postComment(name, comment, timestamp);
 
         const comments = await api.getComments();
         renderComments(comments);
 
-        console.log("Comment posted.", comments);
     } catch (error) {
-        console.error("Error posting comment index-page:", error);
+        console.error("Error posting comment: index-page:");
     }
 
     evt.target.reset();
